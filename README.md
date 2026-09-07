@@ -16,22 +16,18 @@ The application provides both **analog and digital clock displays** with a clean
 
 ![World Clock Preview](assets/images/preview.png)
 
-> Replace `assets/images/preview.png` with the actual path of your project screenshot if your screenshot uses a different filename or folder.
-
----
-
 ## ✨ Features
 
-- 🌍 Real-time clocks for multiple cities
-- 🕐 Analog clock display
-- ⏱️ Digital time display
-- 🌎 Multiple international time zones
-- 🎨 Modern dark/neon user interface
-- 📱 Responsive design
-- ⚡ Real-time time updates using JavaScript
-- 🧩 Clean and organized frontend structure
-- 💻 Built with Vanilla JavaScript
-- 🌐 Runs directly in a modern web browser
+* 🌍 Real-time clocks for multiple cities
+* 🕐 Analog clock display
+* ⏱️ Digital time display
+* 🌎 Multiple international time zones
+* 🎨 Modern dark/neon user interface
+* 📱 Responsive design
+* ⚡ Real-time time updates using JavaScript
+* 🧩 Clean and organized frontend structure
+* 💻 Built with Vanilla JavaScript
+* 🌐 Runs directly in a modern web browser
 
 ---
 
@@ -39,16 +35,16 @@ The application provides both **analog and digital clock displays** with a clean
 
 The application currently displays clocks for:
 
-| City | Country |
-|---|---|
-| 🇵🇰 Karachi | Pakistan |
-| 🇵🇸 Jerusalem | Palestine |
-| 🇸🇦 Makkah | Saudi Arabia |
-| 🇮🇷 Tehran | Iran |
-| 🇹🇷 Istanbul | Türkiye |
-| 🇬🇧 London | United Kingdom |
-| 🇺🇸 New York | United States |
-| 🇯🇵 Tokyo | Japan |
+| City           | Country        |
+| -------------- | -------------- |
+| 🇵🇰 Karachi   | Pakistan       |
+| 🇵🇸 Jerusalem | Palestine      |
+| 🇸🇦 Makkah    | Saudi Arabia   |
+| 🇮🇷 Tehran    | Iran           |
+| 🇹🇷 Istanbul  | Türkiye        |
+| 🇬🇧 London    | United Kingdom |
+| 🇺🇸 New York  | United States  |
+| 🇯🇵 Tokyo     | Japan          |
 
 ---
 
@@ -56,19 +52,19 @@ The application currently displays clocks for:
 
 ### Frontend
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (ES6+)**
+* **HTML5**
+* **CSS3**
+* **JavaScript (ES6+)**
 
 ### Concepts Used
 
-- JavaScript `Date` object
-- Time zone handling
-- DOM manipulation
-- Real-time UI updates
-- Analog clock calculations
-- Responsive web design
-- CSS animations and styling
+* JavaScript `Date` object
+* Time zone handling
+* DOM manipulation
+* Real-time UI updates
+* Analog clock calculations
+* Responsive web design
+* CSS animations and styling
 
 ---
 
@@ -78,12 +74,12 @@ The purpose of this project was to build a practical real-world frontend applica
 
 The project focuses on combining:
 
-- Functional JavaScript
-- Real-time data updates
-- Multiple time zones
-- Interactive UI
-- Responsive design
-- Modern visual design
+* Functional JavaScript
+* Real-time data updates
+* Multiple time zones
+* Interactive UI
+* Responsive design
+* Modern visual design
 
 ---
 
@@ -91,14 +87,14 @@ The project focuses on combining:
 
 While developing this project, I improved my understanding of:
 
-- Working with JavaScript's `Date` object
-- Handling different time zones
-- Updating DOM elements dynamically
-- Creating real-time interfaces
-- Building analog clock functionality
-- Structuring frontend projects
-- Creating responsive layouts
-- Combining functionality with modern UI design
+* Working with JavaScript's `Date` object
+* Handling different time zones
+* Updating DOM elements dynamically
+* Creating real-time interfaces
+* Building analog clock functionality
+* Structuring frontend projects
+* Creating responsive layouts
+* Combining functionality with modern UI design
 
 ---
 
@@ -108,14 +104,24 @@ While developing this project, I improved my understanding of:
 world-clock/
 │
 ├── index.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
+├── script.js
+├── style.css
 │
 ├── assets/
 │   └── images/
+│       └── preview.png
 │
 └── README.md
+```
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Ahmad Khan**
+
+GitHub: [@muhammadahmad152](https://github.com/muhammadahmad152)
+
+---
+
+⭐ If you like this project, feel free to explore the repository and check out my other projects.
