@@ -1,43 +1,66 @@
 # 🌍 World Clock
 
-A responsive world clock web application that displays real-time clocks for multiple cities around the world.
+A modern and responsive **World Clock web application** that displays real-time clocks for multiple cities around the world.
+
+The project features both **analog and digital clocks**, a dark/neon visual design, and a clean interface built with fundamental frontend web technologies.
+
+---
 
 ## ✨ Features
 
-- 🌍 Multiple city clocks
-- 🕐 Real-time clock updates
-- 🕰️ Analog clock displays
+- 🌍 Real-time clocks for multiple cities
+- 🕐 Analog clock display
+- ⏱️ Digital time display
+- 🌎 Multiple international time zones
+- 🎨 Modern dark/neon user interface
 - 📱 Responsive design
-- 🎨 Modern dark/neon interface
-- 💻 Built with vanilla JavaScript
+- ⚡ Real-time time updates using JavaScript
+- 🧩 Clean and organized frontend structure
+- 💻 Built with vanilla web technologies
+- 🌐 Works directly in a modern web browser
 
-## 🛠️ Technologies
+---
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+## 🌎 Supported Cities
 
-## 🌎 Cities
+The application currently displays clocks for:
 
-- Karachi
-- Jerusalem
-- Makkah
-- Tehran
-- Istanbul
-- London
-- New York
-- Tokyo
+| City | Country |
+|---|---|
+| 🇵🇰 Karachi | Pakistan |
+| 🇵🇸 Jerusalem | Palestine |
+| 🇸🇦 Makkah | Saudi Arabia |
+| 🇮🇷 Tehran | Iran |
+| 🇹🇷 Istanbul | Türkiye |
+| 🇬🇧 London | United Kingdom |
+| 🇺🇸 New York | United States |
+| 🇯🇵 Tokyo | Japan |
 
-## 🚀 Live Demo
+---
 
-[View Live Demo](YOUR-LIVE-DEMO-LINK)
+## 🛠️ Technologies Used
+
+### Frontend
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
+
+### Concepts Used
+
+- JavaScript Date & Time
+- Time zone handling
+- DOM manipulation
+- Real-time UI updates
+- CSS animations and styling
+- Responsive web design
+- Analog clock calculations
+
+---
 
 ## 📸 Preview
 
-Add your project screenshot here.
+> Add a screenshot of your World Clock interface here.
 
-## 👨‍💻 Author
-
-**Muhammad Ahmad Khan**
-
-GitHub: https://github.com/muhammadahmad152
+```text
+![World Clock Preview](assets/images/preview.png)
