@@ -2,7 +2,21 @@
 
 A modern and responsive **World Clock web application** that displays real-time clocks for multiple cities around the world.
 
-The project features both **analog and digital clocks**, a dark/neon visual design, and a clean interface built with fundamental frontend web technologies.
+The application provides both **analog and digital clock displays** with a clean dark/neon interface. It is built using **HTML5, CSS3, and Vanilla JavaScript (ES6+)**.
+
+---
+
+## 🚀 Live Demo
+
+🔗 **[View World Clock Live](https://muhammadahmad152.github.io/world-clock/)**
+
+---
+
+## 📸 Preview
+
+![World Clock Preview](assets/images/preview.png)
+
+> Replace `assets/images/preview.png` with the actual path of your project screenshot if your screenshot uses a different filename or folder.
 
 ---
 
@@ -16,8 +30,8 @@ The project features both **analog and digital clocks**, a dark/neon visual desi
 - 📱 Responsive design
 - ⚡ Real-time time updates using JavaScript
 - 🧩 Clean and organized frontend structure
-- 💻 Built with vanilla web technologies
-- 🌐 Works directly in a modern web browser
+- 💻 Built with Vanilla JavaScript
+- 🌐 Runs directly in a modern web browser
 
 ---
 
@@ -48,19 +62,60 @@ The application currently displays clocks for:
 
 ### Concepts Used
 
-- JavaScript Date & Time
+- JavaScript `Date` object
 - Time zone handling
 - DOM manipulation
 - Real-time UI updates
-- CSS animations and styling
-- Responsive web design
 - Analog clock calculations
+- Responsive web design
+- CSS animations and styling
 
 ---
 
-## 📸 Preview
+## 🎯 Project Purpose
 
-> Add a screenshot of your World Clock interface here.
+The purpose of this project was to build a practical real-world frontend application while strengthening my understanding of JavaScript date and time functionality.
+
+The project focuses on combining:
+
+- Functional JavaScript
+- Real-time data updates
+- Multiple time zones
+- Interactive UI
+- Responsive design
+- Modern visual design
+
+---
+
+## 🧠 What I Learned
+
+While developing this project, I improved my understanding of:
+
+- Working with JavaScript's `Date` object
+- Handling different time zones
+- Updating DOM elements dynamically
+- Creating real-time interfaces
+- Building analog clock functionality
+- Structuring frontend projects
+- Creating responsive layouts
+- Combining functionality with modern UI design
+
+---
+
+## 📂 Project Structure
 
 ```text
-![World Clock Preview](assets/images/preview.png)
+world-clock/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+├── assets/
+│   └── images/
+│
+└── README.md
