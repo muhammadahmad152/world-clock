@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg: #03030b;
+    --text: #f5f7ff;
+    --muted: #8c91aa;
+
+    --cyan: #00f6ff;
+    --purple: #9d5cff;
+    --pink: #ff2bd6;
+    --blue: #3478ff;
+    --green: #00ffb3;
+    --gold: #ffc857;
+    --red: #ff4d6d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0, 246, 255, .10), transparent 25%),
+        radial-gradient(circle at 90% 10%, rgba(157, 92, 255, .13), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(255, 43, 214, .10), transparent 30%),
+        #03030b;
+}
+
+/* FUTURISTIC GRID */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(0, 246, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 246, 255, .035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(to bottom,
+            black 0%,
+            black 60%,
+            transparent 100%);
+}
+
+/* Ambient glow */
+
+body::after {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    left: -220px;
+    top: 35%;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+    filter: blur(170px);
+
+    opacity: .10;
+
+    animation: ambientGlow 9s ease-in-out infinite alternate;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes ambientGlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(180px, -100px) scale(1.35);
+    }
+}
+
+/* MAIN */
+
+.world-clock-container {
+    width: min(1400px, 92%);
+    margin: auto;
+
+    padding: 70px 0 90px;
+}
+
+/* TITLE */
+
+.world-clock-container h1 {
+    text-align: center;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+
+    font-weight: 800;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: transparent;
+
+    background:
+        linear-gradient(90deg,
+            var(--cyan),
+            white,
+            var(--purple),
+            var(--pink),
+            var(--cyan));
+
+    background-size: 300%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: titleFlow 8s linear infinite;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0, 246, 255, .35)) drop-shadow(0 0 30px rgba(157, 92, 255, .2));
+
+    margin-bottom: 65px;
+}
+
+@keyframes titleFlow {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+.world-clock-container h1::after {
+    content: "// GLOBAL TIME NETWORK //";
+
+    display: block;
+
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    filter: none;
+}
+
+/* GRID */
+
+.clocks-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(220px, 1fr));
+
+    gap: 28px;
+}
+
+/* CLOCK CARD */
+
+.clock-card {
+    --theme: var(--cyan);
+
+    position: relative;
+
+    min-height: 330px;
+
+    padding: 27px 18px 30px;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(255, 255, 255, .10);
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, .075),
+            rgba(255, 255, 255, .015));
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .08),
+        0 25px 70px rgba(0, 0, 0, .35);
+
+    transition:
+        transform .45s cubic-bezier(.2, .8, .2, 1),
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+/* Card top neon line */
+
+.clock-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            var(--theme),
+            transparent);
+
+    box-shadow:
+        0 0 12px var(--theme),
+        0 0 25px var(--theme);
+}
+
+/* Card glow */
+
+.clock-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -110px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: var(--theme);
+
+    filter: blur(80px);
+
+    opacity: .10;
+
+    transition: .5s ease;
+}
+
+.clock-card:hover {
+    transform: translateY(-12px) scale(1.025);
+
+    border-color: color-mix(in srgb,
+            var(--theme),
+            transparent 55%);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, .55),
+        0 0 35px color-mix(in srgb,
+            var(--theme),
+            transparent 85%),
+        inset 0 1px 0 rgba(255, 255, 255, .12);
+}
+
+.clock-card:hover::after {
+    transform: scale(2);
+    opacity: .18;
+}
+
+/* CITY TITLE */
+
+.clock-card h2 {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    margin-bottom: 22px;
+
+    text-shadow:
+        0 0 8px var(--theme);
+
+    transition: .35s ease;
+}
+
+.clock-card:hover h2 {
+    color: var(--theme);
+
+    text-shadow:
+        0 0 8px var(--theme),
+        0 0 22px var(--theme);
+}
+
+/* ANALOG CLOCK */
+
+.clock {
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(8, 8, 22, .98) 0%,
+            rgba(3, 3, 12, .98) 62%,
+            rgba(0, 0, 0, .98) 100%);
+
+    border: 2px solid color-mix(in srgb,
+            var(--theme),
+            transparent 35%);
+
+    box-shadow:
+        0 0 10px color-mix(in srgb,
+            var(--theme),
+            transparent 55%),
+        0 0 35px color-mix(in srgb,
+            var(--theme),
+            transparent 78%),
+        inset 0 0 30px color-mix(in srgb,
+            var(--theme),
+            transparent 88%);
+
+    transition: .5s ease;
+}
+
+.clock-card:hover .clock {
+    transform: scale(1.045);
+
+    box-shadow:
+        0 0 15px color-mix(in srgb,
+            var(--theme),
+            transparent 35%),
+        0 0 55px color-mix(in srgb,
+            var(--theme),
+            transparent 75%),
+        inset 0 0 35px color-mix(in srgb,
+            var(--theme),
+            transparent 85%);
+}
+
+/* Outer ring */
+
+.clock::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(255, 255, 255, .16);
+
+    box-shadow:
+        0 0 8px color-mix(in srgb,
+            var(--theme),
+            transparent 75%);
+}
+
+/* Inner ring */
+
+.clock::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 17px;
+
+    border-radius: 50%;
+
+    border: 1px solid color-mix(in srgb,
+            var(--theme),
+            transparent 80%);
+}
+
+/* CLOCK NUMBERS */
+
+.numbers {
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #f5ffff;
+
+    text-shadow:
+        0 0 8px var(--theme);
+}
+
+.numbers div {
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+}
+
+.twelve {
+    top: 10%;
+    left: 50%;
+}
+
+.three {
+    top: 50%;
+    left: 90%;
+}
+
+.six {
+    top: 90%;
+    left: 50%;
+}
+
+.nine {
+    top: 50%;
+    left: 10%;
+}
+
+/* CLOCK TICKS */
+
+.numbers::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 25px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(from 0deg,
+            color-mix(in srgb,
+                var(--theme),
+                transparent 25%) 0deg 1deg,
+            transparent 1deg 6deg);
+
+    mask-image:
+        radial-gradient(circle,
+            transparent 0 86%,
+            black 87% 100%);
+
+    -webkit-mask-image:
+        radial-gradient(circle,
+            transparent 0 86%,
+            black 87% 100%);
+}
+
+/* HANDS */
+
+.arrows {
+    position: absolute;
+    inset: 0;
+
+    z-index: 8;
+}
+
+.arrows>div {
+    position: absolute;
+
+    left: 50%;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+}
+
+/* Hour */
+
+.hour {
+    width: 6px;
+    height: 48px;
+
+    background:
+        linear-gradient(to top,
+            #ffffff,
+            var(--theme));
+
+    box-shadow:
+        0 0 8px var(--theme),
+        0 0 15px var(--theme);
+}
+
+/* Minute */
+
+.minute {
+    width: 4px;
+    height: 67px;
+
+    background:
+        linear-gradient(to top,
+            #ffffff,
+            var(--theme));
+
+    box-shadow:
+        0 0 8px var(--theme),
+        0 0 15px var(--theme);
+}
+
+/* Second */
+
+.second {
+    width: 2px;
+    height: 75px;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 8px var(--pink),
+        0 0 18px var(--pink);
+}
+
+/* Center dot */
+
+.arrows::after {
+    content: "";
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 3px solid var(--theme);
+
+    box-shadow:
+        0 0 8px var(--theme),
+        0 0 20px var(--theme);
+}
+
+/* DIGITAL TIME */
+
+.digital-time {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    padding: 5px 10px;
+
+    min-width: 95px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, .65);
+
+    border: 1px solid color-mix(in srgb,
+            var(--theme),
+            transparent 65%);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--theme);
+
+    text-shadow:
+        0 0 8px var(--theme);
+
+    box-shadow:
+        0 0 12px color-mix(in srgb,
+            var(--theme),
+            transparent 85%);
+}
+
+/* CITY THEMES */
+
+/* Jerusalem */
+
+#jerusalem {
+    --theme: #00e5ff;
+}
+
+/* Iran */
+
+#iran {
+    --theme: #00ff9d;
+}
+
+/* Makkah */
+
+#saudi-arabia {
+    --theme: #ffd166;
+}
+
+/* Istanbul */
+
+#turkey {
+    --theme: #ff4d6d;
+}
+
+/* Karachi */
+
+#pakistan {
+    --theme: #00ffb3;
+}
+
+/* London */
+
+#london {
+    --theme: #9d5cff;
+}
+
+/* New York */
+
+#new-york {
+    --theme: #ff2bd6;
+}
+
+/* Tokyo */
+
+#tokyo {
+    --theme: #3478ff;
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 1150px) {
+
+    .clocks-grid {
+        grid-template-columns:
+            repeat(3, minmax(220px, 1fr));
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+
+@media (max-width: 850px) {
+
+    .clocks-grid {
+        grid-template-columns:
+            repeat(2, minmax(220px, 1fr));
+    }
+
+    .world-clock-container {
+        width: 90%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+
+    .world-clock-container {
+        width: 92%;
+        padding-top: 45px;
+    }
+
+    .world-clock-container h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+
+        margin-bottom: 45px;
+    }
+
+    .world-clock-container h1::after {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+    .clocks-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .clock-card {
+        min-height: 345px;
+
+        padding-top: 28px;
+    }
+
+    .clock-card h2 {
+        font-size: 14px;
+    }
+
+    .clock {
+        width: 225px;
+        height: 225px;
+    }
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 350px) {
+
+    .world-clock-container h1 {
+        font-size: 1.7rem;
+    }
+
+    .clock {
+        width: 195px;
+        height: 195px;
+    }
+}
+
+/* REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+    }
+}
